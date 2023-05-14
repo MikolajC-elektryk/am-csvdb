@@ -45,6 +45,10 @@ data class DataRecord(private val line: String? = null) {
 
     }
 
+    public fun indecies(): IntRange {
+        return mFields.indices;
+    }
+
     public fun wasModified(): Boolean {
         return line != toString();
     }
@@ -55,5 +59,13 @@ data class DataRecord(private val line: String? = null) {
 
     public fun clear() {
         mFields.clear();
+    }
+
+    public fun getSize(): Int {
+        return mFields.size;
+    }
+
+    public fun asArray(): Array<String> {
+        return mFields.toTypedArray();
     }
 }
